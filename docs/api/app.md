@@ -101,7 +101,7 @@ Emitted when a [browserWindow](browser-window.md) gets blurred.
 
 Emitted when a [browserWindow](browser-window.md) gets focused.
 
-### Event: 'gpu-crashed'
+### Event: 'gpu-process-crashed'
 
 Emitted when the gpu process is crashed.
 

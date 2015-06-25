@@ -148,7 +148,7 @@ void App::OnFinishLaunching() {
 }
 
 void App::OnGpuProcessCrashed(base::TerminationStatus exit_code) {
-  Emit("gpu-crashed");
+  Emit("gpu-process-crashed");
 }
 
 base::FilePath App::GetPath(mate::Arguments* args, const std::string& name) {
