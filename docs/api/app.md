@@ -101,6 +101,10 @@ Emitted when a [browserWindow](browser-window.md) gets blurred.
 
 Emitted when a [browserWindow](browser-window.md) gets focused.
 
+### Event: 'gpu-crashed'
+
+Emitted when the gpu process is crashed.
+
 ## app.quit()
 
 Try to close all windows. The `before-quit` event will first be emitted. If all
