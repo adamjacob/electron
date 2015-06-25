@@ -9,6 +9,7 @@
 
 #include "atom/browser/api/event_emitter.h"
 #include "atom/browser/browser_observer.h"
+#include "content/public/browser/gpu_data_manager_observer.h"
 #include "native_mate/handle.h"
 
 namespace base {
@@ -24,7 +25,8 @@ namespace atom {
 namespace api {
 
 class App : public mate::EventEmitter,
-            public BrowserObserver {
+            public BrowserObserver,
+            public content::GpuDataManagerObserver {
  public:
   static mate::Handle<App> Create(v8::Isolate* isolate);
 
@@ -42,6 +44,9 @@ class App : public mate::EventEmitter,
   void OnActivateWithNoOpenWindows() override;
   void OnWillFinishLaunching() override;
   void OnFinishLaunching() override;
+
+  // content::GpuDataManagerObserver:
+  void OnGpuProcessCrashed(base::TerminationStatus exit_code) override;
 
   // mate::Wrappable:
   mate::ObjectTemplateBuilder GetObjectTemplateBuilder(
